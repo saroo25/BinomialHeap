@@ -439,67 +439,67 @@ template <class H> bool checkInverseOrder(H *V,int len){//se l'array è ordinato
 
 int main(){
     
-    BinomialHeap<int>* ciccio=new MinBinomialHeap<int>();
-    ciccio->insetElement(20);
-    ciccio->insetElement(77);
-    ciccio->insetElement(70);
-    ciccio->insetElement(12);
-    ciccio->insetElement(43);
-    ciccio->insetElement(9);
-    ciccio->insetElement(94);
-    ciccio->insetElement(122);
-    ciccio->insetElement(345);
-    ciccio->insetElement(666);
-    ciccio->insetElement(400);
-    ciccio->insetElement(89);
-    ciccio->printHeap();
-    cout<<ciccio->getHighPriorityElement()<<endl;
-    ciccio->extractHighPriorityelement();
-    ciccio->printHeap();
-    ciccio->increasePriority(43,11);
-    ciccio->printHeap();
-    ciccio->deleteElement(666);
-    ciccio->deleteElement(20);
-    ciccio->deleteElement(77);
-    ciccio->deleteElement(70);
-    ciccio->deleteElement(12);
-    ciccio->deleteElement(43);
-    ciccio->deleteElement(9);
-    ciccio->deleteElement(94);
-    ciccio->deleteElement(122);
-    ciccio->deleteElement(345);
-    ciccio->deleteElement(666);
-    ciccio->deleteElement(400);
-    ciccio->deleteElement(89);
-    ciccio->deleteElement(11);
+    BinomialHeap<int>* testheap=new MinBinomialHeap<int>();
+    testheap->insetElement(20);
+    testheap->insetElement(77);
+    testheap->insetElement(70);
+    testheap->insetElement(12);
+    testheap->insetElement(43);
+    testheap->insetElement(9);
+    testheap->insetElement(94);
+    testheap->insetElement(122);
+    testheap->insetElement(345);
+    testheap->insetElement(666);
+    testheap->insetElement(400);
+    testheap->insetElement(89);
+    testheap->printHeap();
+    cout<<testheap->getHighPriorityElement()<<endl;
+    testheap->extractHighPriorityelement();
+    testheap->printHeap();
+    testheap->increasePriority(43,11);
+    testheap->printHeap();
+    testheap->deleteElement(666);
+    testheap->deleteElement(20);
+    testheap->deleteElement(77);
+    testheap->deleteElement(70);
+    testheap->deleteElement(12);
+    testheap->deleteElement(43);
+    testheap->deleteElement(9);
+    testheap->deleteElement(94);
+    testheap->deleteElement(122);
+    testheap->deleteElement(345);
+    testheap->deleteElement(666);
+    testheap->deleteElement(400);
+    testheap->deleteElement(89);
+    testheap->deleteElement(11);
 
-    ciccio->printHeap();
-    delete ciccio;
-    ciccio=NULL;
+    testheap->printHeap();
+    delete testheap;
+    testheap=NULL;
 
 
-    ciccio = new MinBinomialHeap<int>();//generazione di task casuali per verificare che l'heap funzioni e non perda elementi o estragga male
+    testheap = new MinBinomialHeap<int>();//generazione di task casuali per verificare che l'heap funzioni e non perda elementi o estragga male
     int task=10000;
     int len=1000;
     int *A=new int[len];
     bool  isordered=true;//se questa variabile rimane true allora gli array saranno tutti ordinati
     for(int i=0;i<task;i++){
         initRandomArray<int>(A,len);
-        fillHeap<int>(A,len,ciccio);
-        orderArrayUsingHeap<int>(A,len,ciccio);
+        fillHeap<int>(A,len,testheap);
+        orderArrayUsingHeap<int>(A,len,testheap);
         if(!checkOrder<int>(A,len)&& isordered) isordered=false;
     }
     cout<<isordered<<endl;
 
-    delete ciccio;//generazione di task casuali per verificare che l'heap funzioni e non perda elementi o estragga male
-    ciccio=NULL;
-    ciccio = new MaxBinomialHeap<int>();
+    delete testheap;//generazione di task casuali per verificare che l'heap funzioni e non perda elementi o estragga male
+    testheap=NULL;
+    testheap = new MaxBinomialHeap<int>();
     isordered=true;
 
     for(int i=0;i<task;i++){
         initRandomArray<int>(A,len);
-        fillHeap<int>(A,len,ciccio);
-        orderArrayUsingHeap<int>(A,len,ciccio);
+        fillHeap<int>(A,len,testheap);
+        orderArrayUsingHeap<int>(A,len,testheap);
         if(!checkInverseOrder<int>(A,len)&& isordered) isordered=false;
     }
 
